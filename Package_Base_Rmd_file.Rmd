@@ -48,20 +48,21 @@ usethis::create_package(
 )
 
 usethis::use_mit_license(copyright_holder = "A. Anisi")
-usethis::use_package("ggplot2")
-usethis::use_package("caret")
-usethis::use_package("randomForest")
+
+#usethis::use_package("ggplot2")
+#usethis::use_package("caret")
+#usethis::use_package("randomForest")
 usethis::use_package("mpmi")
 usethis::use_package("dataPreparation")
 usethis::use_package("readr")
 #usethis::use_package("tidymodels")
-usethis::use_package("recipes")
-usethis::use_package("rsample")
-usethis::use_package("parsnip")
-usethis::use_package("workflows")
-usethis::use_package("glmnet")
+#usethis::use_package("recipes")
+#usethis::use_package("rsample")
+#usethis::use_package("parsnip")
+#usethis::use_package("workflows")
+#usethis::use_package("glmnet")
 usethis::use_package("plotly")
-usethis::use_package("devtools")
+#usethis::use_package("devtools")
 usethis::use_package("purrr")
 ```
 
@@ -262,7 +263,7 @@ for (i in MI_threshold_values){
        j= j + 1
    }
 
-fig <- plotly::plot_ly(test_plot, x = test_plot$MI_threshold, y = test_plot$`No. features after reduction`, z = test_plot$Mean_MI, colors = c('#0C4B8E'))
+fig <- plotly::plot_ly(plot_input, x = plot_input$MI_threshold, y = plot_input$`No. features after reduction`, z = plot_input$Mean_MI, colors = c('#0C4B8E'))
 fig <- fig %>% add_markers()
 fig <- fig %>% layout(scene = list(xaxis = list(title = 'MI_threshold'),
                      yaxis = list(title = 'No. features'),
@@ -419,10 +420,10 @@ And we'll need to document the data set as well and describe it:
 We finish by running commands that will document, build, and install the package. It may also be a good idea to check the package from within this file.
 
 ```{r}
-devtools::document() # <-- use instead of devtools::document()
-#devtools::build()
-#devtools::install()
-#devtools::check(document = FALSE)
+litr::document() # <-- use instead of devtools::document()
+devtools::build()
+devtools::install()
+devtools::check(document = FALSE)
 ```
 Footer
 © 2023 GitHub, Inc.
