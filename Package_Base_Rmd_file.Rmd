@@ -421,26 +421,7 @@ We finish by running commands that will document, build, and install the package
 
 ```{r}
 litr::document() # <-- use instead of devtools::document()
-devtools::build()
-devtools::install()
-devtools::check(document = FALSE)
+#devtools::build()
+#devtools::install()
+#devtools::check(document = FALSE)
 ```
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-
-
-
-
-
